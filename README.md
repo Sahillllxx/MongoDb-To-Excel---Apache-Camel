@@ -1,95 +1,128 @@
-# MongoDb-To-Excel---Apache-Camel
+# 🚀 MongoDb-To-Excel---Apache-Camel
 
-A simple project that demonstrates how to export data from MongoDB to an Excel file using [Apache Camel](https://camel.apache.org/).
+A hands-on Spring Boot project that demonstrates how to export data from MongoDB to an Excel file using [Apache Camel](https://camel.apache.org/).
 
-## Overview
+---
 
-This repository provides an integration workflow that:
-- Connects to a MongoDB database
-- Retrieves documents from a specified collection
-- Transforms the data as needed
-- Writes the data to an Excel (.xlsx) file
+## 📝 Overview
 
-The integration is built using Apache Camel, allowing for robust routing, transformation, and extensibility.
+This project is designed to help you:
+- 🔗 **Connect to MongoDB**: Seamlessly fetch documents from your chosen collection.
+- 🔄 **Transform Data**: Process and clean data as needed.
+- 📑 **Export to Excel**: Write your data into a structured Excel (`.xlsx`) file.
+- ⚡ **Powered by Apache Camel & Spring Boot**: Benefit from powerful routing and easy configuration.
 
-## Features
+---
 
-- **MongoDB Integration:** Seamlessly connect and read data from MongoDB collections.
-- **Excel Export:** Automatically create and populate Excel files from MongoDB documents.
-- **Configurable Routes:** Easily change source/destination and data transformation logic.
-- **Extensible:** Add more processors, endpoints, or transformations as your use case evolves.
+## ✨ Features
 
-## Prerequisites
+- **Spring Boot Integration**: Quick setup, dependency injection, and easy configuration.
+- **MongoDB Connectivity**: Securely and flexibly connect to your MongoDB instance.
+- **Excel Export**: Auto-generate Excel files from your data with customizable columns.
+- **Configurable Workflows**: Modify endpoints, transformation logic, and output format as your needs grow.
+- **Extensible Architecture**: Add more processors, endpoints, or transformation rules as required.
 
-- Java 8 or higher
-- Maven 3.x
-- Access to a MongoDB instance
+---
 
-## Getting Started
+## 🚦 Prerequisites
 
-1. **Clone this repository:**
+- [Java 8+](https://adoptopenjdk.net/)
+- [Maven 3.x](https://maven.apache.org/)
+- [MongoDB](https://www.mongodb.com/) instance (local or remote)
+
+---
+
+## ⚡ Quick Start
+
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/Sahillllxx/MongoDb-To-Excel---Apache-Camel.git
    cd MongoDb-To-Excel---Apache-Camel
    ```
 
-2. **Configure MongoDB Connection:**
-   - Edit the configuration file (typically `application.properties` or within the Camel route) to set your MongoDB URI, database, and collection.
+2. **Configure MongoDB & Output**
+   - Open `src/main/resources/application.properties` and set:
+     ```properties
+     spring.data.mongodb.uri=mongodb://localhost:27017/your-db
+     mongodb.collection=your-collection
+     excel.output.path=output.xlsx
+     ```
+   - Or use environment variables for secret values.
 
-3. **Build the project:**
+3. **Build the Project**
    ```bash
    mvn clean package
    ```
 
-4. **Run the Camel application:**
+4. **Run the Application**
    ```bash
-   mvn camel:run
+   mvn spring-boot:run
    ```
-   or run the generated JAR file:
+   _or run the JAR:_
    ```bash
    java -jar target/mongodb-to-excel-camel-*.jar
    ```
 
-5. **Result:**
-   - After running, an Excel file will be generated with the exported data.
+5. **Check the Result**
+   - After a successful run, find your Excel file at the specified output path!
 
-## Project Structure
+---
+
+## 📁 Project Structure
 
 ```
 .
 ├── src/
 │   └── main/
-│       └── java/        # Java source files (Camel routes, processors, etc.)
-│       └── resources/   # Application configuration
+│       ├── java/        # Spring Boot application, Camel routes, processors
+│       └── resources/   # application.properties, additional configs
 ├── pom.xml              # Maven dependencies and build configuration
 ```
 
-## Configuration
+---
 
-Typical configuration options include:
-- `mongodb.uri` - MongoDB connection string
-- `mongodb.database` - Database name
-- `mongodb.collection` - Source collection
-- `excel.output.path` - Destination path for the Excel file
+## ⚙️ Configuration
 
-Configure these in your `application.properties` or as environment variables.
+All configs can be set in `application.properties`:
+- `spring.data.mongodb.uri` – MongoDB connection string
+- `mongodb.collection` – Collection to export from
+- `excel.output.path` – Where to save the generated Excel file
 
-## Dependencies
+---
 
-Key dependencies:
-- Apache Camel (camel-core, camel-mongodb, camel-excel or camel-poi)
-- MongoDB Java driver
-- Apache POI (for Excel interaction, if not provided by Camel Excel component)
+## 🧩 Dependencies
 
-See `pom.xml` for details.
+Key dependencies include:
+- `spring-boot-starter`
+- `camel-spring-boot-starter`
+- `camel-mongodb`
+- `camel-excel` or `camel-poi`
+- `mongodb-driver-sync`
+- `apache-poi` (if not included in Camel Excel)
 
-## Customization
+Details in [`pom.xml`](./pom.xml).
 
-You can customize:
-- The fields to export (by modifying the Camel route or processor)
-- Data transformation logic (add processors for cleaning or formatting)
-- Output Excel file structure (sheet names, columns, etc.)
+---
 
+## 🛠️ Customization Tips
 
-**Contributions are welcome!**  
-Feel free to fork this repo and submit pull requests or open issues.
+- Change which fields export: Edit the Camel route or custom processor.
+- Transform/clean data: Add more processors for formatting or calculations.
+- Modify Excel: Adjust column names, sheet names, or file structure.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+Feel free to fork, open issues, or make pull requests.
+
+---
+
+## 📣 Feedback
+
+Questions, suggestions, or want to show off your usage?  
+Open an [issue](https://github.com/Sahillllxx/MongoDb-To-Excel---Apache-Camel/issues) or start a discussion!
+
+---
+```
