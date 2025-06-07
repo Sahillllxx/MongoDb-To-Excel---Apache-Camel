@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/flight-database
+
+mongo:
+  database: flight-database
+  collection: flight-dataset
+  operation: aggregate
+
+app:
+  excel:
+    output-path: D:/excel/flights.xlsx
+
+server:
+  port: 8081
